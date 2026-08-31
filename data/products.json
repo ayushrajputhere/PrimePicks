@@ -1,0 +1,98 @@
+[
+  {
+    "id": "p001",
+    "category": "home-decor",
+    "name": "Ceramic Table Vase Set",
+    "description": "A set of 2 minimalist ceramic vases — looks great empty or with dried pampas grass. Fits most console tables and shelves.",
+    "image": "https://images.unsplash.com/photo-1578500494198-246f612d3b3d?w=500&q=80",
+    "price": "₹899",
+    "originalPrice": "₹1,299",
+    "discount": "31% off",
+    "availability": "In Stock",
+    "buyLink": "https://www.amazon.in/s?k=ceramic+table+vase+set&tag=REPLACE-WITH-YOUR-TAG-21"
+  },
+  {
+    "id": "p002",
+    "category": "home-decor",
+    "name": "Fairy String Lights (10m)",
+    "description": "Warm white LED string lights, battery-powered with remote — great for bedroom walls, balconies, or a shelf accent.",
+    "image": "https://images.unsplash.com/photo-1573148195900-7845dcb9b127?w=500&q=80",
+    "price": "₹449",
+    "originalPrice": "₹699",
+    "discount": "36% off",
+    "availability": "In Stock",
+    "buyLink": "https://www.amazon.in/s?k=fairy+string+lights&tag=REPLACE-WITH-YOUR-TAG-21"
+  },
+  {
+    "id": "p003",
+    "category": "gaming",
+    "name": "RGB Gaming Headphone Stand",
+    "description": "Doubles as a USB hub with a few extra ports — a favorite for gaming setups that want ambient lighting without going overboard.",
+    "image": "https://images.unsplash.com/photo-1591370874773-6702e8f12fd8?w=500&q=80",
+    "price": "₹1,199",
+    "originalPrice": "₹1,799",
+    "discount": "33% off",
+    "availability": "In Stock",
+    "buyLink": "https://www.amazon.in/s?k=rgb+gaming+headphone+stand&tag=REPLACE-WITH-YOUR-TAG-21"
+  },
+  {
+    "id": "p004",
+    "category": "gaming",
+    "name": "Minecraft Creeper Plush Toy",
+    "description": "The classic pick — soft, well-stitched, and instantly recognizable. Holds up well even with younger kids who drag it everywhere.",
+    "image": "https://images.unsplash.com/photo-1606318801954-d46d46d3360a?w=500&q=80",
+    "price": "₹599",
+    "originalPrice": "₹899",
+    "discount": "33% off",
+    "availability": "Limited Stock",
+    "buyLink": "https://www.amazon.in/s?k=minecraft+creeper+plush&tag=REPLACE-WITH-YOUR-TAG-21"
+  },
+  {
+    "id": "p005",
+    "category": "tech",
+    "name": "Wireless Charging Pad (15W)",
+    "description": "Fast wireless charging for iPhone and Android — non-slip base, LED indicator, works through most slim cases.",
+    "image": "https://images.unsplash.com/photo-1591290619762-c520266d1b1a?w=500&q=80",
+    "price": "₹799",
+    "originalPrice": "₹1,199",
+    "discount": "33% off",
+    "availability": "In Stock",
+    "buyLink": "https://www.amazon.in/s?k=wireless+charging+pad&tag=REPLACE-WITH-YOUR-TAG-21"
+  },
+  {
+    "id": "p006",
+    "category": "tech",
+    "name": "USB-C 6-in-1 Hub",
+    "description": "HDMI, USB 3.0, SD card reader and PD charging in one compact hub — handy for laptops with limited ports.",
+    "image": "https://images.unsplash.com/photo-1625961332771-3f40b0e2bdcf?w=500&q=80",
+    "price": "₹1,499",
+    "originalPrice": "₹2,199",
+    "discount": "32% off",
+    "availability": "In Stock",
+    "buyLink": "https://www.amazon.in/s?k=usb+c+hub&tag=REPLACE-WITH-YOUR-TAG-21"
+  },
+  {
+    "id": "p007",
+    "category": "kitchen",
+    "name": "Glass Meal Prep Containers (Set of 5)",
+    "description": "Leak-proof, microwave and freezer safe — a solid pick for anyone meal-prepping through the week.",
+    "image": "https://images.unsplash.com/photo-1584473457406-6240486418e9?w=500&q=80",
+    "price": "₹1,099",
+    "originalPrice": "₹1,599",
+    "discount": "31% off",
+    "availability": "In Stock",
+    "buyLink": "https://www.amazon.in/s?k=glass+meal+prep+containers&tag=REPLACE-WITH-YOUR-TAG-21"
+  },
+  {
+    "id": "p008",
+    "category": "kitchen",
+    "name": "Electric Milk Frother",
+    "description": "Handheld frother for lattes and cold coffee at home — rechargeable, quiet motor, comes with a stand.",
+    "image": "https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=500&q=80",
+    "price": "₹649",
+    "originalPrice": "₹999",
+    "discount": "35% off",
+    "availability": "In Stock",
+    "buyLink": "https://www.amazon.in/s?k=electric+milk+frother&tag=REPLACE-WITH-YOUR-TAG-21"
+  }
+]

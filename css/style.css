@@ -1,357 +1,265 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
+/* =========================
+   PRIMEPICKS — MODERN STYLE
+   ========================= */
 
-:root {
-  --paper: #F6F3EC;
-  --paper-raised: #FFFFFF;
-  --ink: #1E2A25;
-  --ink-soft: #4B584F;
-  --line: #DCD5C6;
-  --gold: #C9992B;
-  --gold-dark: #A87D1F;
-  --teal: #2F6F62;
-  --teal-tint: #E7F0EC;
-  --max-width: 760px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-* { box-sizing: border-box; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: 'Inter', sans-serif;
-  font-size: 17px;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  background: #f6f7f9;
+  color: #151515;
   line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
 }
 
-a { color: inherit; }
+/* =========================
+   HEADER
+   ========================= */
 
-/* ---------- Header ---------- */
 .site-header {
-  border-bottom: 1px solid var(--line);
-  background: var(--paper);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid #e8e8e8;
 }
 
 .site-header-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 22px 20px;
+  max-width: 1180px;
+  margin: auto;
+  padding: 18px 24px;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
 }
 
 .site-logo {
-  font-family: 'Fraunces', serif;
-  font-weight: 700;
-  font-size: 1.4rem;
   text-decoration: none;
-  color: var(--ink);
+  color: #111;
+  font-size: 25px;
+  font-weight: 850;
+  letter-spacing: -1px;
 }
 
 .site-tagline {
-  font-size: 0.85rem;
-  color: var(--ink-soft);
+  color: #777;
+  font-size: 14px;
 }
 
-/* ---------- Layout ---------- */
-main {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 40px 20px 80px;
-}
+/* =========================
+   HERO
+   ========================= */
 
-/* ---------- Homepage ---------- */
 .hero {
-  padding: 20px 0 36px;
-  border-bottom: 1px solid var(--line);
-  margin-bottom: 36px;
+  max-width: 900px;
+  margin: auto;
+  padding: 95px 24px 70px;
+  text-align: center;
 }
 
 .hero h1 {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(2rem, 5vw, 2.6rem);
-  line-height: 1.15;
-  margin: 0 0 14px;
-  max-width: 18ch;
+  font-size: clamp(42px, 7vw, 76px);
+  line-height: 1.03;
+  letter-spacing: -3.5px;
+  font-weight: 850;
+  margin-bottom: 25px;
 }
 
 .hero p {
-  color: var(--ink-soft);
-  max-width: 52ch;
-  margin: 0;
+  max-width: 720px;
+  margin: auto;
+  color: #666;
+  font-size: 17px;
 }
 
-.post-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-}
+/* =========================
+   CATEGORY GRID
+   ========================= */
 
-.post-card {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  background: var(--paper-raised);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 22px 24px;
-  transition: border-color 0.15s ease;
-}
-
-.post-card:hover { border-color: var(--gold); }
-
-.post-card .kicker {
-  font-size: 0.78rem;
-  color: var(--teal);
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-
-.post-card h2 {
-  font-family: 'Fraunces', serif;
-  font-size: 1.3rem;
-  margin: 0 0 6px;
-}
-
-.post-card p {
-  margin: 0;
-  color: var(--ink-soft);
-  font-size: 0.95rem;
-}
-
-/* ---------- Post page ---------- */
-.post-header {
-  margin-bottom: 32px;
-}
-
-.post-header .kicker {
-  font-size: 0.8rem;
-  color: var(--teal);
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.post-header h1 {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(1.8rem, 5vw, 2.3rem);
-  line-height: 1.2;
-  margin: 0 0 14px;
-}
-
-.post-header .dek {
-  color: var(--ink-soft);
-  font-size: 1.05rem;
-  max-width: 58ch;
-}
-
-.disclosure {
-  font-size: 0.82rem;
-  color: var(--ink-soft);
-  background: var(--teal-tint);
-  border-radius: 8px;
-  padding: 10px 14px;
-  margin-top: 18px;
-}
-
-/* Ranked product cards */
-.pick {
-  border: 1px solid var(--line);
-  background: var(--paper-raised);
-  border-radius: 12px;
-  padding: 26px;
-  margin-bottom: 22px;
-  position: relative;
-}
-
-.pick-rank {
-  font-family: 'Fraunces', serif;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--gold-dark);
-  margin-bottom: 6px;
-}
-
-.pick h3 {
-  font-family: 'Fraunces', serif;
-  font-size: 1.25rem;
-  margin: 0 0 10px;
-}
-
-.pick p {
-  margin: 0 0 16px;
-  color: var(--ink-soft);
-}
-
-.pick-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 16px;
-}
-
-.badge {
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 4px 10px;
-  border-radius: 20px;
-  background: var(--teal-tint);
-  color: var(--teal);
-}
-
-.cta {
-  display: inline-block;
-  background: var(--gold);
-  color: #21170A;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 11px 20px;
-  border-radius: 7px;
-  font-size: 0.92rem;
-  transition: background 0.15s ease;
-}
-
-.cta:hover { background: var(--gold-dark); }
-
-/* Section dividers within a post */
-.section-note {
-  font-size: 0.9rem;
-  color: var(--ink-soft);
-  margin: 34px 0 22px;
-  padding-top: 22px;
-  border-top: 1px solid var(--line);
-}
-
-/* ---------- Category grid (homepage) ---------- */
 .category-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
-}
+  max-width: 1180px;
+  margin: auto;
+  padding: 10px 24px 90px;
 
-.category-card {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  background: var(--paper-raised);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 28px 22px;
-  transition: border-color 0.15s ease, transform 0.15s ease;
-}
-
-.category-card:hover {
-  border-color: var(--gold);
-  transform: translateY(-2px);
-}
-
-.category-icon {
-  font-size: 1.8rem;
-  margin-bottom: 12px;
-}
-
-.category-card h2 {
-  font-family: 'Fraunces', serif;
-  font-size: 1.15rem;
-  margin: 0 0 6px;
-}
-
-.category-card p {
-  margin: 0;
-  font-size: 0.88rem;
-  color: var(--ink-soft);
-}
-
-@media (max-width: 520px) {
-  .category-grid { grid-template-columns: 1fr; }
-}
-
-/* ---------- Product grid (category page) ---------- */
-.product-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
-.product-card {
-  background: var(--paper-raised);
-  border: 1px solid var(--line);
-  border-radius: 12px;
+/* =========================
+   CATEGORY CARD
+   ========================= */
+
+.category-card {
+  position: relative;
   overflow: hidden;
+
+  text-decoration: none;
+  color: inherit;
+
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 24px;
+
+  padding: 35px;
+
+  min-height: 220px;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-7px);
+  border-color: #d5d5d5;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.09);
+}
+
+.category-icon {
+  width: 58px;
+  height: 58px;
+
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: #f2f3f5;
+  border-radius: 17px;
+
+  font-size: 29px;
+  margin-bottom: 25px;
 }
 
-.product-img {
-  height: 160px;
-  background-size: cover;
-  background-position: center;
-  background-color: var(--teal-tint);
+.category-card h2 {
+  font-size: 23px;
+  line-height: 1.2;
+  margin-bottom: 9px;
+  letter-spacing: -0.5px;
 }
 
-.product-body {
-  padding: 18px 20px 20px;
+.category-card p {
+  color: #777;
+  font-size: 14px;
+}
+
+/* =========================
+   SUBTLE CARD ARROW
+   ========================= */
+
+.category-card::after {
+  content: "→";
+
+  position: absolute;
+  right: 28px;
+  bottom: 25px;
+
+  width: 38px;
+  height: 38px;
+
   display: flex;
-  flex-direction: column;
-  flex: 1;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: #111;
+  color: #fff;
+
+  font-size: 19px;
+
+  opacity: 0;
+  transform: translateX(-8px);
+
+  transition: 0.25s ease;
 }
 
-.product-body h3 {
-  font-family: 'Fraunces', serif;
-  font-size: 1.08rem;
-  margin: 0 0 8px;
+.category-card:hover::after {
+  opacity: 1;
+  transform: translateX(0);
 }
 
-.product-desc {
-  font-size: 0.9rem;
-  color: var(--ink-soft);
-  margin: 0 0 14px;
-  flex: 1;
-}
+/* =========================
+   FOOTER
+   ========================= */
 
-.badge-gold {
-  background: #FBF0D9;
-  color: var(--gold-dark);
-}
-
-.price-row {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  margin-bottom: 14px;
-}
-
-.price-now {
-  font-family: 'Fraunces', serif;
-  font-weight: 600;
-  font-size: 1.2rem;
-  color: var(--ink);
-}
-
-.price-was {
-  font-size: 0.88rem;
-  color: var(--ink-soft);
-  text-decoration: line-through;
-}
-
-@media (max-width: 560px) {
-  .product-grid { grid-template-columns: 1fr; }
-}
-
-/* ---------- Footer ---------- */
 .site-footer {
-  border-top: 1px solid var(--line);
-  padding: 26px 20px;
+  border-top: 1px solid #e5e5e5;
+
+  background: #111;
+  color: #aaa;
+
   text-align: center;
-  font-size: 0.82rem;
-  color: var(--ink-soft);
+
+  padding: 30px 20px;
+
+  font-size: 13px;
 }
 
-@media (max-width: 480px) {
-  .site-header-inner { flex-direction: column; align-items: flex-start; gap: 4px; }
-  .pick { padding: 20px; }
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 700px) {
+
+  .site-header-inner {
+    padding: 15px 17px;
+  }
+
+  .site-logo {
+    font-size: 22px;
+  }
+
+  .site-tagline {
+    font-size: 11px;
+  }
+
+  .hero {
+    padding: 65px 18px 50px;
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 12vw, 55px);
+    letter-spacing: -2.5px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+    padding: 5px 16px 65px;
+    gap: 14px;
+  }
+
+  .category-card {
+    min-height: 195px;
+    padding: 27px;
+    border-radius: 20px;
+  }
+
+  .category-card h2 {
+    font-size: 20px;
+  }
+
+  .category-card::after {
+    opacity: 1;
+    transform: none;
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .site-footer {
+    padding: 25px 16px;
+    font-size: 12px;
+  }
 }

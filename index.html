@@ -6,7 +6,7 @@
 
   <title>PrimePicks — Smart finds. Better choices.</title>
 
-  <meta name="description" content="Discover trending products, smart gadgets, lifestyle finds and everyday essentials.">
+  <meta name="description" content="Discover smart product picks across tech, gaming, home and lifestyle.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +20,7 @@
 
   <!-- TOP BAR -->
   <div class="top-bar">
-    <p>✨ Handpicked finds • New products added regularly</p>
+    ✦ Smart finds • Better choices • Worth discovering
   </div>
 
 
@@ -29,8 +29,8 @@
 
     <div class="nav-container">
 
-      <a href="index.html" class="brand">
-        <span class="brand-main">Prime</span><span class="brand-accent">Picks</span>
+      <a href="index.html" class="logo">
+        Prime<span>Picks</span>
       </a>
 
       <nav class="nav-links">
@@ -42,11 +42,11 @@
 
       <div class="nav-actions">
 
-        <button class="search-button" onclick="alert('Search coming soon!')">
-          🔍
+        <button class="search-btn" aria-label="Search">
+          ⌕
         </button>
 
-        <a href="#categories" class="nav-cta">
+        <a href="#categories" class="explore-btn">
           Explore
         </a>
 
@@ -59,14 +59,14 @@
 
   <main>
 
-
     <!-- HERO -->
+
     <section class="hero">
 
       <div class="hero-content">
 
-        <div class="hero-pill">
-          <span>✦</span> CURATED PRODUCT FINDS
+        <div class="eyebrow">
+          ✦ CURATED PRODUCT DISCOVERY
         </div>
 
         <h1>
@@ -76,38 +76,27 @@
         </h1>
 
         <p>
-          Discover products worth your money — from tech and gaming
+          Discover products worth checking out — from tech and gaming
           to home, lifestyle and everyday essentials.
         </p>
 
-        <div class="hero-actions">
+        <div class="hero-buttons">
 
-          <a href="#trending" class="hero-primary">
+          <a href="#trending" class="btn-primary">
             Explore Picks <span>→</span>
           </a>
 
-          <a href="#categories" class="hero-secondary">
+          <a href="#categories" class="btn-secondary">
             Browse Categories
           </a>
 
         </div>
 
-        <div class="hero-trust">
+        <div class="trust-row">
 
-          <div>
-            <strong>✓</strong>
-            <span>Curated</span>
-          </div>
-
-          <div>
-            <strong>✓</strong>
-            <span>Useful</span>
-          </div>
-
-          <div>
-            <strong>✓</strong>
-            <span>Worth checking</span>
-          </div>
+          <span>✓ Curated picks</span>
+          <span>✓ Useful products</span>
+          <span>✓ Simple discovery</span>
 
         </div>
 
@@ -118,47 +107,42 @@
 
       <div class="hero-visual">
 
-        <div class="visual-glow"></div>
+        <div class="glow"></div>
 
-        <div class="visual-card">
+        <div class="hero-product-card">
 
-          <div class="visual-top">
-
-            <span class="visual-badge">
-              🔥 TRENDING
-            </span>
-
-            <span class="visual-number">
-              01
-            </span>
-
+          <div class="card-top">
+            <span>🔥 TRENDING</span>
+            <small>01</small>
           </div>
 
-          <div class="visual-product">
+          <div class="hero-product-image">
             🎧
           </div>
 
-          <div class="visual-info">
+          <div class="hero-product-info">
 
-            <span>TECH PICK</span>
+            <small>FEATURED PICK</small>
 
-            <h3>Products worth discovering.</h3>
+            <h3>
+              Something worth
+              discovering.
+            </h3>
 
-            <div class="visual-bottom">
-              <strong>PrimePicks</strong>
-              <span>→</span>
+            <div class="card-footer">
+              <span>PrimePicks</span>
+              <b>→</b>
             </div>
 
           </div>
 
         </div>
 
-
-        <div class="floating-tag tag-one">
+        <div class="floating floating-one">
           ⭐ Top Pick
         </div>
 
-        <div class="floating-tag tag-two">
+        <div class="floating floating-two">
           ⚡ Fresh Find
         </div>
 
@@ -167,44 +151,63 @@
     </section>
 
 
-    <!-- QUICK CATEGORIES -->
+    <!-- CATEGORIES -->
 
-    <section class="quick-categories" id="categories">
+    <section class="categories" id="categories">
 
-      <a href="category.html?cat=home-decor">
-        <span>🏠</span>
+      <a href="category.html?cat=home-decor" class="category-card">
+
+        <div class="category-icon">🏠</div>
+
         <div>
-          <strong>Home & Lifestyle</strong>
-          <small>Make your space better</small>
+          <h3>Home & Lifestyle</h3>
+          <p>Make your space better.</p>
         </div>
-        <b>→</b>
+
+        <span>→</span>
+
       </a>
 
-      <a href="category.html?cat=gaming">
-        <span>🎮</span>
+
+      <a href="category.html?cat=gaming" class="category-card">
+
+        <div class="category-icon">🎮</div>
+
         <div>
-          <strong>Gaming</strong>
-          <small>Upgrade your setup</small>
+          <h3>Gaming</h3>
+          <p>Upgrade your setup.</p>
         </div>
-        <b>→</b>
+
+        <span>→</span>
+
       </a>
 
-      <a href="category.html?cat=tech">
-        <span>⚡</span>
+
+      <a href="category.html?cat=tech" class="category-card">
+
+        <div class="category-icon">⚡</div>
+
         <div>
-          <strong>Tech & Gadgets</strong>
-          <small>Smart everyday tech</small>
+          <h3>Tech & Gadgets</h3>
+          <p>Smart everyday tech.</p>
         </div>
-        <b>→</b>
+
+        <span>→</span>
+
       </a>
 
-      <a href="category.html?cat=kitchen">
-        <span>🍳</span>
+
+      <a href="category.html?cat=kitchen" class="category-card">
+
+        <div class="category-icon">🍳</div>
+
         <div>
-          <strong>Kitchen</strong>
-          <small>Useful daily essentials</small>
+          <h3>Kitchen</h3>
+          <p>Useful daily essentials.</p>
         </div>
-        <b>→</b>
+
+        <span>→</span>
+
       </a>
 
     </section>
@@ -214,30 +217,27 @@
 
     <section class="section" id="trending">
 
-      <div class="section-heading">
+      <div class="section-header">
 
         <div>
           <span class="section-label">DISCOVER</span>
-          <h2>Trending picks</h2>
+          <h2>Trending Picks</h2>
         </div>
 
-        <a href="#categories">
-          View categories →
-        </a>
+        <a href="#categories">View categories →</a>
 
       </div>
 
 
-      <div class="coming-soon">
+      <div class="empty-products">
 
-        <div class="coming-icon">
-          ✦
-        </div>
+        <div class="empty-icon">✦</div>
 
-        <h3>Your next favourite product could be here.</h3>
+        <h3>Great products are coming.</h3>
 
         <p>
-          We're preparing our first collection of handpicked products.
+          We're preparing a collection of handpicked products
+          worth discovering.
         </p>
 
       </div>
@@ -247,11 +247,13 @@
 
     <!-- DEALS -->
 
-    <section class="deal-banner" id="deals">
+    <section class="deal-section" id="deals">
 
-      <div class="deal-text">
+      <div class="deal-content">
 
-        <span class="section-label">PRIMEPICKS DEALS</span>
+        <span class="section-label">
+          PRIMEPICKS DEALS
+        </span>
 
         <h2>
           Good finds.<br>
@@ -259,31 +261,38 @@
         </h2>
 
         <p>
-          Stay tuned for products, offers and useful finds worth checking.
+          Discover useful products and interesting deals
+          without endless searching.
         </p>
 
-        <a href="#trending" class="deal-button">
+        <a href="#trending" class="deal-btn">
           Explore Deals →
         </a>
 
       </div>
 
-      <div class="deal-shape">
+      <div class="deal-circle">
         <span>%</span>
       </div>
 
     </section>
 
 
-    <!-- WHY -->
+    <!-- WHY PRIMEPICKS -->
 
-    <section class="section why-section">
+    <section class="section why">
 
-      <div class="section-heading centered">
+      <div class="section-header centered">
 
         <div>
-          <span class="section-label">WHY PRIMEPICKS</span>
-          <h2>Less scrolling. Better picking.</h2>
+          <span class="section-label">
+            WHY PRIMEPICKS
+          </span>
+
+          <h2>
+            Less scrolling.<br>
+            Better picking.
+          </h2>
         </div>
 
       </div>
@@ -294,19 +303,25 @@
         <div class="why-card">
           <span>01</span>
           <h3>Curated</h3>
-          <p>We focus on products worth discovering.</p>
+          <p>
+            Products selected with usefulness and value in mind.
+          </p>
         </div>
 
         <div class="why-card">
           <span>02</span>
           <h3>Simple</h3>
-          <p>No endless searching through random products.</p>
+          <p>
+            Find interesting products without endless searching.
+          </p>
         </div>
 
         <div class="why-card">
           <span>03</span>
           <h3>Useful</h3>
-          <p>Every category is built around real everyday needs.</p>
+          <p>
+            Discover things that can actually improve everyday life.
+          </p>
         </div>
 
       </div>
@@ -323,15 +338,11 @@
     <div class="footer-inner">
 
       <div>
-
-        <a href="index.html" class="footer-brand">
+        <a href="index.html" class="footer-logo">
           Prime<span>Picks</span>
         </a>
 
-        <p>
-          Smart finds. Better choices.
-        </p>
-
+        <p>Smart finds. Better choices.</p>
       </div>
 
       <div class="footer-links">

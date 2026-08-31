@@ -1085,5 +1085,134 @@ a {
 
   .footer-links {
     flex-wrap: wrap;
+     /* =========================================
+   PRIMEPICKS — DESKTOP LAYOUT FIX
+   ========================================= */
+
+@media (min-width: 901px) {
+
+  /* Keep everything centered */
+  .nav-container,
+  .hero,
+  .quick-categories,
+  .section {
+    width: 100%;
+    max-width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Navbar */
+  .nav-container {
+    min-height: 72px;
+  }
+
+  /* Hero */
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+  }
+
+  .hero-content {
+    min-width: 0;
+  }
+
+  .hero-visual {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* Prevent hero card from escaping its area */
+  .visual-card {
+    max-width: 390px;
+  }
+
+  /* Categories */
+  .quick-categories {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .quick-categories a {
+    min-width: 0;
+  }
+
+  /* Section headings */
+  .section-heading {
+    width: 100%;
+  }
+
+  /* Deal banner */
+  .deal-banner {
+    width: calc(100% - 56px);
+    max-width: 1194px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .deal-text {
+    min-width: 0;
+  }
+
+  /* Why section */
+  .why-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .why-card {
+    min-width: 0;
+  }
+
+  /* Footer */
+  .footer-inner,
+  .footer-bottom {
+    width: 100%;
+    max-width: 1194px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
+
+
+/* =========================================
+   LARGE DESKTOP
+   ========================================= */
+
+@media (min-width: 1200px) {
+
+  .hero {
+    padding-top: 85px;
+    padding-bottom: 85px;
+  }
+
+  .hero-content {
+    padding-left: 10px;
+  }
+
+  .hero-visual {
+    transform: translateX(10px);
+  }
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-categories {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .deal-banner {
+    margin-left: 28px;
+    margin-right: 28px;
+  }
+}
+  }
+}
+

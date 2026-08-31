@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">Category — PickShelf</title>
+<meta name="description" content="Curated picks with price, availability and current discounts.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="site-logo">PickShelf</a>
+    <span class="site-tagline">Best-of guides, kept short</span>
+  </div>
+</header>
+
+<main>
+  <div class="post-header">
+    <div class="kicker" id="cat-kicker">CATEGORY</div>
+    <h1 id="cat-title">Loading…</h1>
+    <p class="dek" id="cat-dek"></p>
+    <p class="disclosure">Disclosure: This page contains affiliate links. As an Amazon Associate, we earn from qualifying purchases — at no extra cost to you.</p>
+  </div>
+
+  <div id="product-grid" class="product-grid"></div>
+
+  <p id="empty-state" class="section-note" style="display:none;">No products added in this category yet — add some in data/products.json.</p>
+</main>
+
+<footer class="site-footer">
+  © 2026 PickShelf. As an Amazon Associate, we earn from qualifying purchases.
+</footer>
+
+<script>
+  const CATEGORY_META = {
+    "home-decor": { label: "HOME DECOR / LIFESTYLE", title: "Home Decor & Lifestyle Picks", dek: "Small upgrades that make a room feel put-together — tested for quality, not just looks." },
+    "gaming": { label: "GAMING ACCESSORIES", title: "Gaming Accessories", dek: "Gear and merch worth owning — ranked by build quality and everyday usefulness." },
+    "tech": { label: "TECH & GADGETS", title: "Tech & Gadgets", dek: "Everyday tech that actually earns a spot on your desk or in your bag." },
+    "kitchen": { label: "KITCHEN & HOME ESSENTIALS", title: "Kitchen & Home Essentials", dek: "Practical picks for the kitchen and home — built to be used daily, not just admired." }
+  };
+
+  const params = new URLSearchParams(window.location.search);
+  const cat = params.get("cat") || "home-decor";
+  const meta = CATEGORY_META[cat] || { label: "CATEGORY", title: "Products", dek: "" };
+
+  document.getElementById("page-title").textContent = meta.title + " — PickShelf";
+  document.getElementById("cat-kicker").textContent = meta.label;
+  document.getElementById("cat-title").textContent = meta.title;
+  document.getElementById("cat-dek").textContent = meta.dek;
+
+  fetch("data/products.json")
+    .then(res => res.json())
+    .then(products => {
+      const list = products.filter(p => p.category === cat);
+      const grid = document.getElementById("product-grid");
+
+      if (list.length === 0) {
+        document.getElementById("empty-state").style.display = "block";
+        return;
+      }
+
+      list.forEach(p => {
+        const card = document.createElement("div");
+        card.className = "product-card";
+        card.innerHTML = `
+          <div class="product-img" style="background-image:url('${p.image || ""}')"></div>
+          <div class="product-body">
+            <h3>${p.name}</h3>
+            <p class="product-desc">${p.description}</p>
+            <div class="pick-meta">
+              <span class="badge">${p.availability}</span>
+              ${p.discount ? `<span class="badge badge-gold">${p.discount}</span>` : ""}
+            </div>
+            <div class="price-row">
+              <span class="price-now">${p.price}</span>
+              ${p.originalPrice ? `<span class="price-was">${p.originalPrice}</span>` : ""}
+            </div>
+            <a class="cta" href="${p.buyLink}" target="_blank" rel="nofollow sponsored noopener">Check price on Amazon →</a>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    })
+    .catch(() => {
+      document.getElementById("empty-state").textContent = "Couldn't load products — make sure this page is opened via a web server (not double-clicked as a file). This works automatically once hosted.";
+      document.getElementById("empty-state").style.display = "block";
+    });
+</script>
+
+</body>
+</html>

@@ -543,7 +543,24 @@
           "Make sure data/products.json exists in your GitHub repository.";
 
 
-      });
+      });function shareProduct(name, link) {
+
+  if (navigator.share) {
+
+    navigator.share({
+      title: name,
+      text: "Check out this product on PrimePicks: " + name,
+      url: link
+    });
+
+  } else {
+
+    navigator.clipboard.writeText(link);
+
+    alert("Product link copied!");
+  }
+
+}
 
 
   </script>

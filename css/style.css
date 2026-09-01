@@ -2019,4 +2019,155 @@ button {
   }
 
 }
+``````css
+/* ==========================================
+   PRODUCT INFO + ACTION BUTTONS
+   ========================================== */
+
+.product-info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-bottom: 15px;
+
+  flex-wrap: wrap;
+}
+
+.availability-badge {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 6px 9px;
+
+  background: #F0EBFF;
+
+  color: var(--purple);
+
+  border-radius: 6px;
+
+  font-size: 9px;
+
+  font-weight: 800;
+}
+
+.available-at {
+  color: #77717F;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+
+/* ==========================================
+   PRODUCT ACTIONS
+   ========================================== */
+
+.product-actions {
+  display: flex;
+
+  gap: 9px;
+
+  align-items: stretch;
+}
+
+.product-actions .cta {
+  flex: 1;
+}
+
+
+/* SHARE BUTTON */
+
+.share-product-btn {
+  padding: 0 16px;
+
+  min-height: 45px;
+
+  background: white;
+
+  color: var(--purple);
+
+  border: 1px solid var(--border);
+
+  border-radius: 9px;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition: .25s ease;
+}
+
+.share-product-btn:hover {
+  background: var(--purple-light);
+
+  border-color: var(--purple);
+}
+
+
+/* SHARE ICON ON IMAGE */
+
+.share-btn {
+  position: absolute;
+
+  top: 12px;
+
+  right: 12px;
+
+  width: 36px;
+
+  height: 36px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: white;
+
+  color: var(--purple);
+
+  border: 1px solid var(--border);
+
+  border-radius: 50%;
+
+  font-size: 18px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 15px rgba(50, 30, 100, .12);
+
+  transition: .25s ease;
+}
+
+.share-btn:hover {
+  background: var(--purple);
+
+  color: white;
+
+  transform: scale(1.08);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 450px) {
+
+  .product-actions {
+    flex-direction: column;
+  }
+
+  .share-product-btn {
+    width: 100%;
+  }
+
+}
 ```
+

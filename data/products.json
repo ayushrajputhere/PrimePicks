@@ -98,11 +98,11 @@
   {
     "id": "p009",
     "category": "tech",
-    "name": Skull Style Cool Headphone and Controller Stand ,
+    "name": "Skull Style Cool Headphone and Controller Stand" ,
     "description": "Your product description.",
-    "image": https://i.pinimg.com/736x/4d/2d/34/4d2d340e7f8b97175257da9e203116bb.jpg,
-    "price": ₹2,329,
-    "originalPrice": ₹3,500,
+    "image": "https://i.pinimg.com/736x/4d/2d/34/4d2d340e7f8b97175257da9e203116bb.jpg",
+    "price": "₹2,329",
+    "originalPrice": "₹3,500",
     "discount": "33% off",
     "availability": "In Stock",
     "buyLink": "https://link.amazon/B01f9XtHR"

@@ -1479,3 +1479,544 @@ button {
     animation: none !important;
   }
 }
+```css
+/* =====================================================
+   CATEGORY PAGE
+   ===================================================== */
+
+.category-hero {
+  width: 100%;
+  max-width: 1240px;
+
+  min-height: 430px;
+
+  margin: 0 auto;
+
+  padding: 80px 28px 70px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(280px, 0.7fr);
+
+  align-items: center;
+
+  gap: 50px;
+}
+
+.category-hero-content {
+  min-width: 0;
+  max-width: 720px;
+}
+
+.category-hero h1 {
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(42px, 6vw, 70px);
+
+  line-height: .95;
+
+  letter-spacing: -3px;
+
+  color: var(--black);
+
+  margin-bottom: 22px;
+}
+
+.category-hero p {
+  max-width: 650px;
+
+  color: var(--muted);
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+.category-disclosure {
+  margin-top: 28px;
+
+  padding: 14px 17px;
+
+  background: var(--purple-soft);
+
+  border: 1px solid var(--border);
+
+  border-radius: 10px;
+
+  color: #716A7C;
+
+  font-size: 11px;
+
+  line-height: 1.6;
+}
+
+.category-disclosure strong {
+  color: var(--purple);
+}
+
+
+/* CATEGORY HERO DECORATION */
+
+.category-hero-decoration {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 300px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.category-orb {
+  width: min(300px, 75vw);
+
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      #B9A8FF 0%,
+      #DED4FF 45%,
+      #F7F5FF 70%
+    );
+}
+
+.category-symbol {
+  position: absolute;
+
+  width: 125px;
+  height: 125px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: white;
+
+  border: 1px solid var(--border);
+
+  border-radius: 28px;
+
+  color: var(--purple);
+
+  font-size: 65px;
+
+  box-shadow: var(--shadow);
+
+  transform: rotate(8deg);
+}
+
+
+/* =====================================================
+   PRODUCTS SECTION
+   ===================================================== */
+
+.products-section {
+  width: 100%;
+  max-width: 1240px;
+
+  margin: 0 auto;
+
+  padding: 30px 28px 100px;
+}
+
+.products-heading {
+  margin-bottom: 30px;
+}
+
+.products-heading h2 {
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(30px, 4vw, 42px);
+
+  letter-spacing: -1.5px;
+
+  color: var(--black);
+}
+
+
+/* =====================================================
+   PRODUCT GRID
+   ===================================================== */
+
+.product-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+
+/* =====================================================
+   PRODUCT CARD
+   ===================================================== */
+
+.product-card {
+  min-width: 0;
+
+  overflow: hidden;
+
+  background: white;
+
+  border: 1px solid var(--border);
+
+  border-radius: 18px;
+
+  box-shadow: 0 5px 20px rgba(70, 40, 130, .05);
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    border-color .3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-7px);
+
+  border-color: var(--purple);
+
+  box-shadow: var(--shadow-hover);
+}
+
+
+/* PRODUCT IMAGE */
+
+.product-image-wrap {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  background: var(--purple-soft);
+}
+
+.product-img {
+  width: 100%;
+
+  aspect-ratio: 1 / 0.85;
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+
+  transition: transform .4s ease;
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.05);
+}
+
+
+/* DISCOUNT */
+
+.discount-tag {
+  position: absolute;
+
+  top: 13px;
+  left: 13px;
+
+  padding: 7px 10px;
+
+  background: var(--purple);
+
+  color: white;
+
+  border-radius: 7px;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  box-shadow: 0 5px 15px rgba(108, 59, 255, .25);
+}
+
+
+/* PRODUCT BODY */
+
+.product-body {
+  padding: 20px;
+}
+
+.product-body h3 {
+  font-family: "Space Grotesk", sans-serif;
+
+  color: var(--black);
+
+  font-size: 19px;
+
+  line-height: 1.2;
+
+  margin-bottom: 9px;
+}
+
+.product-desc {
+  min-height: 42px;
+
+  color: var(--muted);
+
+  font-size: 12px;
+
+  line-height: 1.6;
+
+  margin-bottom: 14px;
+
+  display: -webkit-box;
+
+  -webkit-line-clamp: 2;
+
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+
+/* BADGES */
+
+.pick-meta {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  min-height: 26px;
+
+  margin-bottom: 12px;
+}
+
+.badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 6px 9px;
+
+  background: var(--purple-light);
+
+  color: var(--purple);
+
+  border-radius: 6px;
+
+  font-size: 9px;
+
+  font-weight: 800;
+}
+
+
+/* PRICES */
+
+.price-row {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+
+  margin-bottom: 17px;
+}
+
+.price-now {
+  color: var(--black);
+
+  font-size: 22px;
+
+  font-weight: 800;
+}
+
+.price-was {
+  color: #AAA4B0;
+
+  font-size: 12px;
+
+  text-decoration: line-through;
+}
+
+
+/* AMAZON BUTTON */
+
+.cta {
+  width: 100%;
+
+  min-height: 45px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  background: var(--purple);
+
+  color: white;
+
+  border-radius: 9px;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  transition: .25s ease;
+}
+
+.cta:hover {
+  background: var(--purple-dark);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 20px
+    rgba(108, 59, 255, .22);
+}
+
+.cta span {
+  font-size: 16px;
+}
+
+
+/* =====================================================
+   EMPTY STATE
+   ===================================================== */
+
+.products-section .empty-products {
+  margin-top: 10px;
+}
+
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (max-width: 1000px) {
+
+  .category-hero {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(220px, .55fr);
+
+    gap: 25px;
+  }
+
+  .product-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+  .category-hero {
+    min-height: auto;
+
+    grid-template-columns: 1fr;
+
+    padding: 55px 17px 40px;
+
+    gap: 30px;
+  }
+
+  .category-hero h1 {
+    font-size: 45px;
+
+    letter-spacing: -2px;
+  }
+
+  .category-hero p {
+    font-size: 14px;
+  }
+
+  .category-hero-decoration {
+    min-height: 210px;
+  }
+
+  .category-orb {
+    width: 210px;
+  }
+
+  .category-symbol {
+    width: 95px;
+    height: 95px;
+
+    border-radius: 21px;
+
+    font-size: 48px;
+  }
+
+
+  /* PRODUCTS */
+
+  .products-section {
+    padding: 30px 17px 70px;
+  }
+
+  .products-heading {
+    margin-bottom: 20px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .product-body {
+    padding: 17px;
+  }
+
+  .product-body h3 {
+    font-size: 18px;
+  }
+
+  .product-img {
+    aspect-ratio: 1 / .75;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL PHONES
+   ===================================================== */
+
+@media (max-width: 380px) {
+
+  .category-hero h1 {
+    font-size: 39px;
+  }
+
+  .category-symbol {
+    width: 80px;
+    height: 80px;
+
+    font-size: 40px;
+  }
+
+}
+```

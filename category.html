@@ -1,93 +1,555 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title id="page-title">Category — PickShelf</title>
-<meta name="description" content="Curated picks with price, availability and current discounts.">
-<link rel="stylesheet" href="css/style.css">
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title id="page-title">Category — PrimePicks</title>
+
+  <meta name="description"
+    content="Discover curated product picks with prices, discounts and availability.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
 </head>
+
+
 <body>
 
-<header class="site-header">
-  <div class="site-header-inner">
-    <a href="index.html" class="site-logo">PickShelf</a>
-    <span class="site-tagline">Best-of guides, kept short</span>
-  </div>
-</header>
 
-<main>
-  <div class="post-header">
-    <div class="kicker" id="cat-kicker">CATEGORY</div>
-    <h1 id="cat-title">Loading…</h1>
-    <p class="dek" id="cat-dek"></p>
-    <p class="disclosure">Disclosure: This page contains affiliate links. As an Amazon Associate, we earn from qualifying purchases — at no extra cost to you.</p>
+  <!-- TOP BAR -->
+
+  <div class="top-bar">
+    ✦ Smart finds • Better choices • Worth discovering
   </div>
 
-  <div id="product-grid" class="product-grid"></div>
 
-  <p id="empty-state" class="section-note" style="display:none;">No products added in this category yet — add some in data/products.json.</p>
-</main>
+  <!-- NAVBAR -->
 
-<footer class="site-footer">
-  © 2026 PickShelf. As an Amazon Associate, we earn from qualifying purchases.
-</footer>
+  <header class="site-header">
 
-<script>
-  const CATEGORY_META = {
-    "home-decor": { label: "HOME DECOR / LIFESTYLE", title: "Home Decor & Lifestyle Picks", dek: "Small upgrades that make a room feel put-together — tested for quality, not just looks." },
-    "gaming": { label: "GAMING ACCESSORIES", title: "Gaming Accessories", dek: "Gear and merch worth owning — ranked by build quality and everyday usefulness." },
-    "tech": { label: "TECH & GADGETS", title: "Tech & Gadgets", dek: "Everyday tech that actually earns a spot on your desk or in your bag." },
-    "kitchen": { label: "KITCHEN & HOME ESSENTIALS", title: "Kitchen & Home Essentials", dek: "Practical picks for the kitchen and home — built to be used daily, not just admired." }
-  };
+    <div class="nav-container">
 
-  const params = new URLSearchParams(window.location.search);
-  const cat = params.get("cat") || "home-decor";
-  const meta = CATEGORY_META[cat] || { label: "CATEGORY", title: "Products", dek: "" };
+      <a href="index.html" class="logo">
+        Prime<span>Picks</span>
+      </a>
 
-  document.getElementById("page-title").textContent = meta.title + " — PickShelf";
-  document.getElementById("cat-kicker").textContent = meta.label;
-  document.getElementById("cat-title").textContent = meta.title;
-  document.getElementById("cat-dek").textContent = meta.dek;
 
-  fetch("data/products.json")
-    .then(res => res.json())
-    .then(products => {
-      const list = products.filter(p => p.category === cat);
-      const grid = document.getElementById("product-grid");
+      <nav class="nav-links">
 
-      if (list.length === 0) {
-        document.getElementById("empty-state").style.display = "block";
-        return;
+        <a href="index.html">Home</a>
+
+        <a href="index.html#trending">Trending</a>
+
+        <a href="index.html#categories">Categories</a>
+
+        <a href="index.html#deals">Deals</a>
+
+      </nav>
+
+
+      <div class="nav-actions">
+
+        <a href="index.html#categories" class="explore-btn">
+          Explore
+        </a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- CATEGORY HERO -->
+
+    <section class="category-hero">
+
+      <div class="category-hero-content">
+
+        <div class="eyebrow" id="cat-kicker">
+          CATEGORY
+        </div>
+
+
+        <h1 id="cat-title">
+          Loading...
+        </h1>
+
+
+        <p id="cat-dek">
+        </p>
+
+
+        <div class="category-disclosure">
+
+          <strong>Affiliate Disclosure:</strong>
+
+          As an Amazon Associate, PrimePicks earns from qualifying
+          purchases at no extra cost to you.
+
+        </div>
+
+      </div>
+
+
+      <div class="category-hero-decoration">
+
+        <div class="category-orb"></div>
+
+        <div class="category-symbol">
+          ✦
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- PRODUCTS -->
+
+    <section class="products-section">
+
+      <div class="products-heading">
+
+        <div>
+
+          <span class="section-label">
+            CURATED COLLECTION
+          </span>
+
+          <h2>
+            Explore the picks
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUCT GRID -->
+
+      <div id="product-grid" class="product-grid"></div>
+
+
+      <!-- EMPTY STATE -->
+
+      <div id="empty-state"
+        class="empty-products"
+        style="display:none;">
+
+        <div class="empty-icon">
+          ✦
+        </div>
+
+        <h3>
+          Products coming soon
+        </h3>
+
+        <p>
+          We're currently preparing the best picks for this category.
+          Check back soon.
+        </p>
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <div class="footer-inner">
+
+      <div>
+
+        <a href="index.html" class="footer-logo">
+          Prime<span>Picks</span>
+        </a>
+
+        <p>
+          Smart finds. Better choices.
+        </p>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <a href="index.html">Home</a>
+
+        <a href="index.html#trending">Trending</a>
+
+        <a href="index.html#categories">Categories</a>
+
+        <a href="index.html#deals">Deals</a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      © 2026 PrimePicks. As an Amazon Associate,
+      we earn from qualifying purchases.
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+
+    /* =========================================
+       CATEGORY INFORMATION
+       ========================================= */
+
+
+    const CATEGORY_META = {
+
+      "home-decor": {
+
+        label: "HOME & LIFESTYLE",
+
+        title: "Home & Lifestyle Picks",
+
+        dek:
+          "Discover simple upgrades and useful finds that can make your space feel better."
+
+      },
+
+
+      "gaming": {
+
+        label: "GAMING ACCESSORIES",
+
+        title: "Gaming Picks",
+
+        dek:
+          "Gaming accessories, setup upgrades and useful gear worth checking out."
+
+      },
+
+
+      "tech": {
+
+        label: "TECH & GADGETS",
+
+        title: "Tech & Gadget Picks",
+
+        dek:
+          "Smart everyday gadgets and useful technology for your desk, bag and setup."
+
+      },
+
+
+      "kitchen": {
+
+        label: "KITCHEN ESSENTIALS",
+
+        title: "Kitchen & Home Picks",
+
+        dek:
+          "Practical everyday products designed to make your kitchen and home more useful."
+
       }
 
-      list.forEach(p => {
-        const card = document.createElement("div");
-        card.className = "product-card";
-        card.innerHTML = `
-          <div class="product-img" style="background-image:url('${p.image || ""}')"></div>
-          <div class="product-body">
-            <h3>${p.name}</h3>
-            <p class="product-desc">${p.description}</p>
-            <div class="pick-meta">
-              <span class="badge">${p.availability}</span>
-              ${p.discount ? `<span class="badge badge-gold">${p.discount}</span>` : ""}
+    };
+
+
+
+    /* =========================================
+       GET CATEGORY FROM URL
+       ========================================= */
+
+
+    const params =
+      new URLSearchParams(window.location.search);
+
+
+    const cat =
+      params.get("cat") || "home-decor";
+
+
+    const meta =
+      CATEGORY_META[cat] || {
+
+        label: "CATEGORY",
+
+        title: "Products",
+
+        dek: "Discover useful products."
+
+      };
+
+
+
+    /* =========================================
+       UPDATE PAGE TEXT
+       ========================================= */
+
+
+    document.getElementById("page-title").textContent =
+      meta.title + " — PrimePicks";
+
+
+    document.getElementById("cat-kicker").textContent =
+      meta.label;
+
+
+    document.getElementById("cat-title").textContent =
+      meta.title;
+
+
+    document.getElementById("cat-dek").textContent =
+      meta.dek;
+
+
+
+    /* =========================================
+       LOAD PRODUCTS
+       ========================================= */
+
+
+    fetch("data/products.json")
+
+      .then(res => {
+
+        if (!res.ok) {
+
+          throw new Error("Products not found");
+
+        }
+
+        return res.json();
+
+      })
+
+
+      .then(products => {
+
+
+        const list =
+          products.filter(
+            p => p.category === cat
+          );
+
+
+        const grid =
+          document.getElementById("product-grid");
+
+
+        const empty =
+          document.getElementById("empty-state");
+
+
+
+        /* NO PRODUCTS */
+
+
+        if (list.length === 0) {
+
+          empty.style.display = "block";
+
+          return;
+
+        }
+
+
+
+        /* CREATE PRODUCT CARDS */
+
+
+        list.forEach(p => {
+
+
+          const card =
+            document.createElement("article");
+
+
+          card.className =
+            "product-card";
+
+
+          card.innerHTML = `
+
+
+            <div class="product-image-wrap">
+
+
+              <div
+                class="product-img"
+
+                style="
+                  background-image:
+                  url('${p.image || ""}')
+                "
+
+              ></div>
+
+
+              ${p.discount ? `
+
+                <div class="discount-tag">
+
+                  ${p.discount}
+
+                </div>
+
+              ` : ""}
+
+
             </div>
-            <div class="price-row">
-              <span class="price-now">${p.price}</span>
-              ${p.originalPrice ? `<span class="price-was">${p.originalPrice}</span>` : ""}
+
+
+
+            <div class="product-body">
+
+
+              <h3>
+                ${p.name}
+              </h3>
+
+
+              <p class="product-desc">
+
+                ${p.description}
+
+              </p>
+
+
+
+              <div class="pick-meta">
+
+
+                ${p.availability ? `
+
+                  <span class="badge">
+
+                    ${p.availability}
+
+                  </span>
+
+                ` : ""}
+
+
+              </div>
+
+
+
+              <div class="price-row">
+
+
+                <span class="price-now">
+
+                  ${p.price}
+
+                </span>
+
+
+                ${p.originalPrice ? `
+
+                  <span class="price-was">
+
+                    ${p.originalPrice}
+
+                  </span>
+
+                ` : ""}
+
+
+              </div>
+
+
+
+              <a
+
+                class="cta"
+
+                href="${p.buyLink}"
+
+                target="_blank"
+
+                rel="nofollow sponsored noopener"
+
+              >
+
+                View on Amazon
+
+                <span>→</span>
+
+              </a>
+
+
             </div>
-            <a class="cta" href="${p.buyLink}" target="_blank" rel="nofollow sponsored noopener">Check price on Amazon →</a>
-          </div>
-        `;
-        grid.appendChild(card);
+
+
+          `;
+
+
+          grid.appendChild(card);
+
+
+        });
+
+
+      })
+
+
+      .catch(error => {
+
+
+        const empty =
+          document.getElementById("empty-state");
+
+
+        empty.style.display =
+          "block";
+
+
+        empty.querySelector("h3").textContent =
+          "Products couldn't load";
+
+
+        empty.querySelector("p").textContent =
+          "Make sure data/products.json exists in your GitHub repository.";
+
+
       });
-    })
-    .catch(() => {
-      document.getElementById("empty-state").textContent = "Couldn't load products — make sure this page is opened via a web server (not double-clicked as a file). This works automatically once hosted.";
-      document.getElementById("empty-state").style.display = "block";
-    });
-</script>
+
+
+  </script>
+
 
 </body>
+
 </html>
+```

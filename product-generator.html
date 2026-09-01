@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Generator — Prime Picks (internal tool)</title>
+<style>
+  body {
+    font-family: "DM Sans", Arial, sans-serif;
+    max-width: 640px;
+    margin: 40px auto;
+    padding: 0 20px;
+    color: #1a1a1a;
+    background: #FAF9FC;
+  }
+  h1 { font-size: 1.4rem; margin-bottom: 4px; }
+  p.sub { color: #666; margin-top: 0; font-size: 0.9rem; }
+  label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 16px 0 6px;
+  }
+  input, select, textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    box-sizing: border-box;
+  }
+  textarea { resize: vertical; min-height: 60px; }
+  button {
+    margin-top: 22px;
+    background: #6C3BFF;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+  }
+  button:hover { background: #5729e0; }
+  #output-wrap { margin-top: 26px; display: none; }
+  #output {
+    background: #1e1e2e;
+    color: #d4d4f0;
+    padding: 16px;
+    border-radius: 10px;
+    font-family: monospace;
+    font-size: 0.85rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  #copy-btn {
+    background: #2F6F62;
+    margin-top: 10px;
+  }
+  .hint {
+    font-size: 0.78rem;
+    color: #888;
+    margin-top: 4px;
+  }
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1e1e2e;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<h1>⚡ Product Generator</h1>
+<p class="sub">Fill this once per product → copy the JSON it generates → paste into <code>data/products.json</code>. This page is just a local tool — don't need to upload it live (but no harm if you do).</p>
+
+<label>Product Name</label>
+<input type="text" id="name" placeholder="e.g. Ceramic Table Vase Set">
+
+<label>Category</label>
+<select id="category">
+  <option value="home-decor">Home Decor / Lifestyle</option>
+  <option value="gaming">Gaming</option>
+  <option value="tech">Tech & Gadgets</option>
+  <option value="kitchen">Kitchen</option>
+</select>
+
+<label>Short Description</label>
+<textarea id="description" placeholder="1-2 lines about what's good about it"></textarea>
+
+<label>Image URL</label>
+<input type="text" id="image" placeholder="https://...">
+<p class="hint">Use your own photo, Unsplash/Pexels, or an image host like imgur — not Amazon's own image URL.</p>
+
+<label>Current Price</label>
+<input type="text" id="price" placeholder="₹899">
+
+<label>Original Price (optional)</label>
+<input type="text" id="originalPrice" placeholder="₹1,299">
+
+<label>Discount label (optional)</label>
+<input type="text" id="discount" placeholder="31% off">
+
+<label>Availability</label>
+<select id="availability">
+  <option value="In Stock">In Stock</option>
+  <option value="Limited Stock">Limited Stock</option>
+  <option value="Out of Stock">Out of Stock</option>
+</select>
+
+<label>Amazon Affiliate Buy Link</label>
+<input type="text" id="buyLink" placeholder="https://www.amazon.in/dp/XXXX?tag=yourtag-21">
+
+<button onclick="generate()">Generate JSON →</button>
+
+<div id="output-wrap">
+  <label>Copy this and paste into products.json (add a comma before it if pasting after an existing product):</label>
+  <div id="output"></div>
+  <button id="copy-btn" onclick="copyOutput()">📋 Copy to clipboard</button>
+</div>
+
+<div class="toast" id="toast">Copied!</div>
+
+<script>
+  function generate() {
+    const id = "p" + Date.now().toString().slice(-6);
+
+    const product = {
+      id: id,
+      category: document.getElementById("category").value,
+      name: document.getElementById("name").value || "Untitled product",
+      description: document.getElementById("description").value,
+      image: document.getElementById("image").value,
+      price: document.getElementById("price").value,
+      originalPrice: document.getElementById("originalPrice").value,
+      discount: document.getElementById("discount").value,
+      availability: document.getElementById("availability").value,
+      buyLink: document.getElementById("buyLink").value
+    };
+
+    const json = JSON.stringify(product, null, 2) + ",";
+    document.getElementById("output").textContent = json;
+    document.getElementById("output-wrap").style.display = "block";
+    document.getElementById("output-wrap").scrollIntoView({ behavior: "smooth" });
+  }
+
+  function copyOutput() {
+    const text = document.getElementById("output").textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const toast = document.getElementById("toast");
+      toast.style.display = "block";
+      setTimeout(() => toast.style.display = "none", 1500);
+    });
+  }
+</script>
+
+</body>
+</html>

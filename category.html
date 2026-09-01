@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800;900&display=swap"
     rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
@@ -61,6 +60,10 @@
 
 
       <div class="nav-actions">
+
+        <button class="search-btn" aria-label="Search" onclick="openSearch()">
+          ⌕
+        </button>
 
         <a href="index.html#categories" class="explore-btn">
           Explore
@@ -543,7 +546,9 @@
           "Make sure data/products.json exists in your GitHub repository.";
 
 
-      });function shareProduct(name, link) {
+      });
+
+    function shareProduct(name, link) {
 
   if (navigator.share) {
 
@@ -565,8 +570,81 @@
 
   </script>
 
+  <!-- SEARCH OVERLAY -->
+  <div class="search-overlay" id="search-overlay">
+    <div class="search-panel">
+      <div class="search-input-row">
+        <span class="icon">⌕</span>
+        <input type="text" id="search-input" placeholder="Search products…" autocomplete="off">
+        <button class="search-close" onclick="closeSearch()">✕</button>
+      </div>
+      <div class="search-results" id="search-results">
+        <div class="search-empty">Start typing to search products…</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let allProductsForSearch = [];
+
+    fetch("data/products.json")
+      .then(res => res.json())
+      .then(products => { allProductsForSearch = products; })
+      .catch(() => { allProductsForSearch = []; });
+
+    function openSearch() {
+      document.getElementById("search-overlay").classList.add("open");
+      document.getElementById("search-input").focus();
+    }
+
+    function closeSearch() {
+      document.getElementById("search-overlay").classList.remove("open");
+    }
+
+    document.getElementById("search-overlay").addEventListener("click", (e) => {
+      if (e.target.id === "search-overlay") closeSearch();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeSearch();
+      if (e.key === "/" && document.activeElement.id !== "search-input") {
+        e.preventDefault();
+        openSearch();
+      }
+    });
+
+    document.getElementById("search-input").addEventListener("input", (e) => {
+      const q = e.target.value.trim().toLowerCase();
+      const resultsEl = document.getElementById("search-results");
+
+      if (!q) {
+        resultsEl.innerHTML = '<div class="search-empty">Start typing to search products…</div>';
+        return;
+      }
+
+      const matches = allProductsForSearch.filter(p =>
+        p.name.toLowerCase().includes(q) ||
+        (p.description || "").toLowerCase().includes(q) ||
+        (p.category || "").toLowerCase().includes(q)
+      );
+
+      if (matches.length === 0) {
+        resultsEl.innerHTML = '<div class="search-empty">No products found.</div>';
+        return;
+      }
+
+      resultsEl.innerHTML = matches.map(p => `
+        <a class="search-result-item" href="category.html?cat=${p.category}">
+          <div class="search-result-img" style="background-image:url('${p.image || ""}')"></div>
+          <div>
+            <div class="search-result-name">${p.name}</div>
+            <div class="search-result-cat">${p.price || ""} · ${p.category}</div>
+          </div>
+        </a>
+      `).join("");
+    });
+  </script>
 
 </body>
 
 </html>
-```

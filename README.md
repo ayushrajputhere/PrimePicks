@@ -1,6 +1,14 @@
-# PickShelf — How to use this website
+# Prime Picks — How to use this website
 
-## 1. Naya product kaise add karein (no coding needed)
+## ⚠️ Fixed in this update
+- **Search bar** — was decorative only (no working code behind it), now fully functional on both pages — click the ⌕ icon, live search opens across all products.
+- **Font looking cheap** — leftover markdown code-fences (` ```html ` / ` ``` `) were sitting inside `category.html` and `css/style.css`, which broke the page's rendering mode. Removed them, and added the missing bold font-weights (800/900) that weren't being loaded, which were also making text render as fake/blurry-bold.
+- **Slow to add products** — added `product-generator.html`, a small local tool: fill a form, click generate, copy the JSON, paste into `products.json`. No manual typing of JSON needed anymore.
+
+## 0. Fastest way to add a product now
+Open `product-generator.html` in your browser (just double-click it, no hosting needed) → fill the form → click **Generate JSON** → click **Copy to clipboard** → paste it into `data/products.json` (inside the square brackets, with other products).
+
+## 1. Naya product kaise add karein (manual method, still works)
 
 Sab products ek hi file me hain: `data/products.json`
 
@@ -45,16 +53,16 @@ add karo. (Bata dena, main bhi kar sakta hun.)
 
 ### Option A — GitHub Pages (recommended, sabse reliable, free forever)
 1. github.com pe free account banao (agar nahi hai).
-2. Naya repository banao — naam kuch bhi (e.g. `pickshelf`).
+2. Naya repository banao — naam kuch bhi (e.g. `PrimePicks`).
 3. Is folder ke saare files (index.html, category.html, css/, data/) us
    repository me upload kar do — GitHub website pe "Add file → Upload files"
    se seedha drag-drop kar sakte ho, koi git command nahi chahiye.
 4. Repository ke **Settings → Pages** me jao, "Branch: main" select karo, Save.
 5. 1-2 minute me tumhari site live ho jayegi is URL pe:
-   `https://your-username.github.io/pickshelf/`
-6. Baad me apna khud ka domain (e.g. pickshelf.com) bhi free me connect kar
-   sakte ho GitHub Pages ke "Custom domain" setting se (domain kharidna
-   padega, hosting free rahegi).
+   `https://your-username.github.io/PrimePicks/`
+6. Baad me apna khud ka domain bhi free me connect kar sakte ho GitHub
+   Pages ke "Custom domain" setting se (domain kharidna padega, hosting
+   free rahegi).
 
 ### Option B — Netlify (sabse easy, drag-and-drop, free)
 1. netlify.com pe free account banao.
@@ -74,3 +82,4 @@ Pin banate waqt "Destination link" me category page ka live URL daalo,
 jaise: `https://your-site.com/category.html?cat=home-decor`
 Isse Pinterest se aane wala traffic seedha us category ke saare products
 dekhega, sirf ek product nahi.
+
